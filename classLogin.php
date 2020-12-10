@@ -21,7 +21,7 @@
      
      public $user_id = "";
      /**
-      * @var boolean The user's login status
+      * @ The user's login status
      */
      public $user_is_logged_in = false;
     
@@ -40,16 +40,11 @@
       */
      public function __construct()
      {
-         // TODO: adapt the minimum check like in 0-one-file version
  $this->user_is_logged_in = $user_is_logged_in;
         // create/read session
          session_start();
  
-         // check the possible login actions:
-         // 1. logout (happen when user clicks logout button)
-         // 2. login via session data (happens each time user opens a page on your php project AFTER he has sucessfully logged in via the login form)
-         // 3. login via post data, which means simply logging in via the login form. after the user has submit his login/password successfully, his
-         //    logged-in-status is written into his session data on the server. this is the typical behaviour of common login scripts.
+       
           
          // if user tried to log out
          if (isset($_GET["logout"])) {
@@ -92,7 +87,7 @@
                   $this->db_connection = new mysqli('localhost', 'root', '1', 'test');
 
  
-             // create a database connection, using the constants from config/db.php (which we loaded in index.php)
+             // create a database connection
                if ($this->db_connection->connect_errno) {
              echo "Connection Failed " . $this->db_connection->connect_errno . "";
              }
@@ -229,7 +224,7 @@
  
      /**
       * simply return the current state of the user's login
-      * @return boolean user's login status
+      
       */
      public function isUserLoggedIn()
      {
