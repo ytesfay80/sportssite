@@ -1,6 +1,6 @@
 <?php
 ob_start();
-require 'classLogin4.php';
+require 'classLogin.php';
 require 'original_values.php';
 session_start();
 
